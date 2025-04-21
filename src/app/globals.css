@@ -1,0 +1,10 @@
+:root {
+  --background-dark: #000000;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: white;
+
+  margin: 0;
+}
