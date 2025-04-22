@@ -1,5 +1,5 @@
 'use client'
-import { Box, CircularProgress, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { usePosts } from '../features/posts/hooks'
 import { useRouter } from 'next/navigation'
 import { PostCard } from '@/entities/post/ui/postCard'

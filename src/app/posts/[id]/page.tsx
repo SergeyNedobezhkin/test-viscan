@@ -12,7 +12,13 @@ export default function PostPage({ params }: { params: { id: string } }) {
   if (isLoadingPost) return <Loader />
 
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
+    <Container maxWidth="md" sx={{
+      py: 4,
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
+    }}>
       <Link href="/posts">
         <Button variant="outlined" sx={{ mb: 4 }}>
           Назад

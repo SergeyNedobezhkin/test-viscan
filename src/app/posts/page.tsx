@@ -21,7 +21,7 @@ export default function PostsPage() {
             justifyContent: 'center',
           }}
         >
-          Список с постов!
+          Список постов!
         </Typography>
         <PostList />
       </Container>
