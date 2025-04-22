@@ -1,8 +1,8 @@
 'use client'
 import { usePost, useUser } from '@/features/posts/hooks'
+import { BackgroundPage } from '@/shared/ui/backgroundPage'
 import { Loader } from '@/shared/ui/loading'
-import { Button, Container, Typography, CircularProgress, Box } from '@mui/material'
-import Image from 'next/image'
+import { Button, Container, Typography } from '@mui/material'
 import Link from 'next/link'
 
 export default function PostPage({ params }: { params: { id: string } }) {
@@ -19,32 +19,8 @@ export default function PostPage({ params }: { params: { id: string } }) {
         </Button>
       </Link>
 
-      {isLoadingUser ?
-        <Loader /> :
-        <>
-          <Box
-            sx={{
-              position: 'fixed',
-              paddingTop: '350px',
-              top: 0,
-              left: '25%',
-              width: '50%',
-              height: '50%',
-              zIndex: -1,
-              opacity: 0.5
-            }}
-          >
-            <Image
-              src={'https://viscan.ru/images/trails.webp'}
-              alt='Фоновое изображение'
-              fill
-              style={{
-                objectFit: 'cover'
-              }}
-              quality={100}
-              priority
-            />
-          </Box>
+      {isLoadingUser ? <Loader /> :
+        <BackgroundPage>
           <Typography variant="h3" component="h1" gutterBottom>
             {post?.title}
           </Typography>
@@ -56,7 +32,7 @@ export default function PostPage({ params }: { params: { id: string } }) {
           <Typography variant="h6" paragraph>
             {post?.body}
           </Typography>
-        </>
+        </BackgroundPage>
       }
     </Container>
   )
